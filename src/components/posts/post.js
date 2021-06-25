@@ -1,10 +1,11 @@
-
 export default function Post(props) {
-    let {item}=props;
+    let {item} = props;
     return (
-        <div>{item.userId}-{item.id}-{item.title}-{item.body}</div>
+        <div>{item.userId}-{item.id}-{item.title}-{item.body}
+            <hr/>
+        </div>
 
-    );
+);
 
 
 }

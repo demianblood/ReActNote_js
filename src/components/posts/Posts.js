@@ -1,4 +1,5 @@
 import {useEffect, useState} from "react";
+import Post from "./post";
 
 export default function Posts(props) {
 
@@ -13,9 +14,7 @@ export default function Posts(props) {
     }, [])
 
     return (
-        posts.map(post =>
-            <div>{posts.userId}-{posts.id}-{posts.title}-{posts.body}</div>
-        )
+        posts.map(post =><Post item={post}/>)
     );
 
 

@@ -1,25 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import Users from "./components/users/users";
+import Menu from "./components/menu/menu";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default function App() {
+    return (
+        <div>
+            <Menu
+                pages={['users page', 'coments page', 'post page']}
+                classes={['target']}
+            />
+
+            <Users/>
+            <Menu pages={['about', 'team']}
+            classes={['abouts','teams']}
+            />
+        </div>
+    );
 }
-
-export default App;

@@ -1,9 +1,9 @@
-import Posts from "../src/components/posts/Posts"
+import Comentes from "./components/coments/Comments";
 
 export default function App() {
     return (
         <div>
-            <Posts/>
+            <Comentes/>
         </div>
     );
 }

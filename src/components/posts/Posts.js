@@ -1,7 +1,7 @@
 import {useEffect, useState} from "react";
 import Post from "./post";
 
-export default function Posts(props) {
+export default function Posts() {
 
     let [posts, setUsers] = useState([])
 
@@ -14,7 +14,10 @@ export default function Posts(props) {
     }, [])
 
     return (
-        posts.map(post =><Post item={post}/>)
+        <div>{
+            posts.map(post =><Post item={post}/>)
+        }</div>
+
     );
 
 

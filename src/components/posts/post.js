@@ -1,11 +1,12 @@
-export default function Post(props) {
-    let {item} = props;
+export default function Post({item}) {
+
     return (
-        <div>{item.userId}-{item.id}-{item.title}-{item.body}
-            <hr/>
+        <div>
+            {item.title}
+
         </div>
 
-);
+    );
 
 
 }

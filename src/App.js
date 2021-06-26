@@ -1,9 +1,11 @@
-import Comentes from "./components/coments/Comments";
+import Users from "./components/users/users";
 
 export default function App() {
     return (
         <div>
-            <Comentes/>
+            <Users/>
         </div>
     );
+
+
 }

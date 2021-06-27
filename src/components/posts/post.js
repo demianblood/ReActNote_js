@@ -1,9 +1,13 @@
-export default function Post({item}) {
+export default function Post({item, fnFather}) {
 
     return (
         <div>
-            {item.title}
-
+            {item.id}-{item.name}-
+            <button onClick={() => {
+                return fnFather(item.id);
+            }
+            }>click me
+            </button>
         </div>
 
     );

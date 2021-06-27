@@ -1,16 +1,22 @@
 import {useEffect, useState} from "react";
-import {getUsers} from "./services/Api";
-import Users from "./components/users/users";
+import {getPost, getPosts} from "./services/Api";
+import Posts from "./components/posts/Posts";
 
 export default function App() {
-    let appFn=()=>console.log('hello')
-    let [users, setUsers] = useState([])
+    let [post, setPost] = useState(null);
+    let appFn = (id) => {
+        getPost(id).then(value => setPost(value.data));
+    }
+    let [posts, setPosts] = useState([])
     useEffect(() => {
-        getUsers().then(value => setUsers(value.data));
+        getPosts().then(value => setPosts(value.data));
     }, [])
     return (
         <div>
-            <Users items={users} appFn={appFn}/>
+            <Posts items={posts} appFn={appFn}/>
+            <hr/>
+            {post && <div>{JSON.stringify(post)}</div>}
+            <hr/>
         </div>
     );
 

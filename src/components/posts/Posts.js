@@ -1,10 +1,11 @@
 import Post from './post';
 
-export default function Posts({items}) {
+
+export default function Posts({items,appFn}) {
     return (
         <div>
             {
-                items.map((value) => <Post item={value}/>)
+                items.map((value) => <Post key={value.id} item={value} fnFather={appFn}/>)
             }
         </div>
     );

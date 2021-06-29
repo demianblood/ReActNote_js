@@ -14,15 +14,12 @@
 // }
 
 
-
-export default function User({item, fnFather,appFnTwo}) {
+export default function User({item, fnFather, postADD}) {
     return (
         <div>{item.id}-{item.name}-
             <button onClick={() => {
                 return fnFather(item.id)
-            }}>click by user</button>-
-            <button onClick={() => {return appFnTwo}
-            }>click by posts</button>
-                </div>
-                );
-            }
+            }}>click by user</button><button onClick={postADD}>Click by post</button>
+        </div>
+    );
+}

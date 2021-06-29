@@ -23,19 +23,24 @@
 
 import {useEffect, useState} from "react";
 import Users from "./components/users/users";
-import {getPosts, getUser, getUsers} from "./services/Api";
+import {getPost, getPosts, getUser, getUsers} from "./services/Api";
 import Posts from "./components/posts/Posts";
 
+
 export default function App() {
-    let [posts, setPosts] = useState(null);
-    let appFnTwo = (id) => {
-        getPosts(id).then(value => setPosts(value.data))
-    };
+
     let [user, setUser] = useState(null);
     let appFn = (id) => {
         getUser(id).then(value => setUser(value.data))
     }
-
+    let [post, setPost] = useState([])
+    let addPost = (id) => {
+        getPost(id).then(value => setPost)
+    }
+    let [posts, setPosts] = useState([])
+    useEffect(() => {
+        getPosts().then(value => setPosts(value.data))
+    })
     let [users, setUsers] = useState([])
     useEffect(() => {
         getUsers().then(value => setUsers(value.data))
@@ -43,10 +48,11 @@ export default function App() {
 
     return (
         <div>
-            <Users items={users} appFn={appFn}/>
-            <Posts items={posts} appFnTwo={appFnTwo}/>
+            <Users items={users} appFn={appFn} addPost={addPost}/>
             <hr/>
-            {user && <div>{JSON.stringify(user)}</div>}
+            <Posts items={posts}/>
+            <hr/>
+            {user && <div>{JSON.stringify(user)}{JSON.stringify(post)}</div>}
             <hr/>
 
         </div>

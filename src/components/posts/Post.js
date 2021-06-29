@@ -13,13 +13,10 @@
 //     );
 //
 // }
-
-
-export default function Post({item,}) {
-
+export default function Post({item,postADD}) {
     return (
         <div>
-            {item.id}-{item.name}
+            {item.name}-{item.id}-{item.title}-{item.body}
         </div>
     );
 

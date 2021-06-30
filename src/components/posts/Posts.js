@@ -13,12 +13,12 @@
 //
 // }
 
-import Post from "./Post";
 
-export default function Posts({items, addPost}) {
+
+export default function Posts({}) {
     return (
         <div>
-            {items.map((value)=><Post key={value.id} item={value} postADD={addPost}/>)}
+
         </div>
     );
 

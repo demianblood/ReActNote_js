@@ -36,6 +36,7 @@ export default function App() {
                 <Route path={'/users'} component={Users}/>
                 <Route path={'/posts'} component={Posts}/>
                 <Route path={'/comments'} component={Comments}/>
+
             </Switch>
         </Router>
     );

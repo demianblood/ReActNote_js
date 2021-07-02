@@ -1,24 +1,16 @@
-// import Post from './post';
-//
-//
-// export default function Posts({items,appFn}) {
-//     return (
-//         <div>
-//             {
-//                 items.map((value) => <Post key={value.id} item={value} fnFather={appFn}/>)
-//             }
-//         </div>
-//     );
-//
-//
-// }
+import Post from "./Post";
+import {useEffect, useState} from "react";
+import {getPosts} from "../../services/Api";
 
-
-
-export default function Posts({}) {
+export default function Posts() {
+    let[posts,setPosts]=useState([])
+useEffect(()=>{
+    getPosts().then(value => setPosts([...value.data]))
+})
     return (
         <div>
-
+            {posts.map(value => <Post item={value}/>)}
+            <hr/>
         </div>
     );
 

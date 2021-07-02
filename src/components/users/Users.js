@@ -1,28 +1,18 @@
-// import User from "../User/user";
-//
-// export default function Users({items, appFn}) {
-//     return (
-//         <div>
-//             {items.map((value) => <User key={value.id} item={value} fnFather={appFn}/>)}
-//         </div>
-//     );
-//
-//
-// }
-
-
 import User from "../User/User";
+import {useEffect, useState} from "react";
+import {getUsers} from "../../services/Api";
 
-export default function Users({items}) {
+export default function Users() {
+    let [users, setUsers] = useState([])
+    useEffect(() => {
+        getUsers().then(value => setUsers([...value.data]))
+    })
     return (
         <div>
-            {
-                items.map((value) => <User key={value.id} item={value}/>)
-            }
-
+            {users.map(value => <User item={value} />)}
+            <hr/>
         </div>
     );
 
 
 }
-

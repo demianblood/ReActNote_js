@@ -1,16 +1,20 @@
 import {useEffect, useState} from "react";
-import Comment from "./Comment"
+import {getComments,} from "../../services/Api";
+import Comment from "./Comment";
 
 export default function Comments() {
-    let [comments, setUsers] = useState([]);
+    let [comments, setComments] = useState([])
     useEffect(() => {
-        fetch(`https://jsonplaceholder.typicode.com/comments`)
-            .then(value => value.json())
-            .then(usersFromServer => {
-                setUsers(usersFromServer);
-            })
-    }, [])
+        getComments().then(value => setComments([...value.data]))
+    })
     return (
-        <div>{comments.map(comment => <Comment item={comment}/>)}</div>
+        <div>
+            {
+                comments.map(value => <Comment item={value}/>)
+            }
+            <hr/>
+        </div>
     );
+
+
 }

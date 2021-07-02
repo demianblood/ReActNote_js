@@ -9,7 +9,7 @@ useEffect(()=>{
 })
     return (
         <div>
-            {posts.map(value => <Post item={value}/>)}
+            {posts.map(value => <Post key={value.id} item={value}/>)}
             <hr/>
         </div>
     );

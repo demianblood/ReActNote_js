@@ -10,7 +10,7 @@ export default function Comments() {
     return (
         <div>
             {
-                comments.map(value => <Comment item={value}/>)
+                comments.map(value => <Comment key={value.id} item={value}/>)
             }
             <hr/>
         </div>

@@ -4,6 +4,7 @@ import {getUserPosts} from "../../services/Api";
 export default function User({item}) {
 
     let [posts, setPosts] = useState([]);
+
     let appFn = (id) => {
 
         getUserPosts(id).then(value => setPosts(value.data))

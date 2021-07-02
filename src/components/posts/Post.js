@@ -2,6 +2,7 @@ import {useState} from "react";
 import {getPostsComments} from "../../services/Api";
 
 export default function Post({item}) {
+
     let [comments, setComments] = useState([]);
     let appFnTwo = (id) => {
 

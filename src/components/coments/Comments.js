@@ -3,6 +3,7 @@ import {getComments,} from "../../services/Api";
 import Comment from "./Comment";
 
 export default function Comments() {
+
     let [comments, setComments] = useState([])
     useEffect(() => {
         getComments().then(value => setComments([...value.data]))

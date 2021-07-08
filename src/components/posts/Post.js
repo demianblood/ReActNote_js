@@ -4,7 +4,7 @@ export default function Post({item}) {
 
     return (
         <div>
-            {item.id}-<Link to={'/posts/'+ item.id}>details by posts</Link>
+            {item.userId}---{item.id}-<Link to={'/posts/'+ item.id}>details by posts</Link>
         {/*    {item.id}-<Link to={*/}
         {/*    {*/}
         {/*        pathname: '/posts/' + item.id,*/}

@@ -5,7 +5,7 @@ export default function Comment({item}) {
 
     return (
         <div>
-            {item.id}-<Link to={'/comments/'+item.id}>details by comments</Link>
+            {item.postId}---{item.id}-<Link to={'/comments/'+item.id}>details by comments</Link>
         {/*    {item.id}-<Link to={*/}
         {/*    {*/}
         {/*        pathname: '/comments/' + item.id,*/}
